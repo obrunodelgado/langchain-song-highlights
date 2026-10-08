@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Proposta Onion — dependências entre módulos",
+    "output": ".archify/architecture-onion-20261007-194058/onion.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "entry",
+      "type": "frontend",
+      "label": "Entrada CLI",
+      "sublabel": "Texto e identidade",
+      "pos": [
+        40,
+        60
+      ],
+      "size": [
+        230,
+        76
+      ]
+    },
+    {
+      "id": "workflow",
+      "type": "backend",
+      "label": "Adaptador LangGraph",
+      "sublabel": "Estado e checkpoints",
+      "pos": [
+        400,
+        60
+      ],
+      "size": [
+        230,
+        76
+      ]
+    },
+    {
+      "id": "cases",
+      "type": "backend",
+      "label": "Casos de uso",
+      "sublabel": "Responder, salvar, resumir",
+      "pos": [
+        400,
+        260
+      ],
+      "size": [
+        230,
+        76
+      ]
+    },
+    {
+      "id": "domain",
+      "type": "backend",
+      "label": "Domínio",
+      "sublabel": "Preferências e regras puras",
+      "pos": [
+        40,
+        260
+      ],
+      "size": [
+        230,
+        76
+      ]
+    },
+    {
+      "id": "ports",
+      "type": "backend",
+      "label": "Portas da aplicação",
+      "sublabel": "Contratos sem SDKs",
+      "pos": [
+        400,
+        460
+      ],
+      "size": [
+        230,
+        76
+      ]
+    },
+    {
+      "id": "adapters",
+      "type": "backend",
+      "label": "Adaptadores externos",
+      "sublabel": "OpenRouter e SQLite",
+      "pos": [
+        40,
+        460
+      ],
+      "size": [
+        230,
+        76
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "from": "entry",
+      "to": "workflow",
+      "label": "aciona"
+    },
+    {
+      "from": "workflow",
+      "to": "cases",
+      "label": "invoca"
+    },
+    {
+      "from": "cases",
+      "to": "domain",
+      "label": "usa"
+    },
+    {
+      "from": "cases",
+      "to": "ports",
+      "label": "depende"
+    },
+    {
+      "from": "adapters",
+      "to": "ports",
+      "label": "implementa"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Proposta, ainda não implementada",
+      "items": [
+        "Setas representam dependências de código.",
+        "Bootstrap instancia e injeta as implementações.",
+        "CLI usa um adaptador externo de conversa."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Núcleo independente",
+      "items": [
+        "Domínio: combinar preferências sem SQL.",
+        "Aplicação: chat → salvar se necessário → resumir se necessário.",
+        "Portas trocam mensagens e resultados próprios."
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Detalhes externos preservados",
+      "items": [
+        "LangGraph traduz mensagens e remove histórico antigo.",
+        "PostgreSQL persiste checkpoints do grafo.",
+        "SQLite mantém preferências e resumos.",
+        "Prompts e validação de respostas ficam no adaptador de IA."
+      ]
+    }
+  ]
+}

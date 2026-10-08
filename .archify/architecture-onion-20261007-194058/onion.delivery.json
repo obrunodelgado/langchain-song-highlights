@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "0518ecd5-1e56-4af2-8f37-4442147fc6fe",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/Users/bruno/projetos/engenharia-de-software-com-ia-aplicada/modulo02-integracao-apis-llms/04-song-highlights-template/.archify/architecture-onion-20261007-194058/candidate.json",
+  "output": "/Users/bruno/projetos/engenharia-de-software-com-ia-aplicada/modulo02-integracao-apis-llms/04-song-highlights-template/.archify/architecture-onion-20261007-194058/onion.html",
+  "specification": {
+    "sha256": "1a1e2b824578372822a0647e8b985fcdc9e7119ff2ec69730e9fa8ce582c81c9",
+    "bytes": 3055
+  },
+  "artifact": {
+    "sha256": "89a206bccfe539658c78c267ecf463eeec4eef20c44dda86860d3b8481be465d",
+    "bytes": 752348
+  }
+}
