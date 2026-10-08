@@ -9,3 +9,9 @@ outputs/
 
 # LangGraph API
 .langgraph_api
+
+# Backups locais de dados pessoais
+.local-backups/
+*.db
+*.db-shm
+*.db-wal

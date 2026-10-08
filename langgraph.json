@@ -1,6 +1,6 @@
 {
   "graphs": {
-    "song_highlights": "./src/graph/factory.ts:graph"
+    "song_highlights": "./src/bootstrap/container.ts:graph"
   },
   "env": ".env"
 }
